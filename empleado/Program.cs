@@ -1,5 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using System;
 Console.WriteLine("Hello, World!");
 Emplea2 empleado1 = new Emplea2();
 Emplea2 empleado2 = new Emplea2();
@@ -54,5 +53,9 @@ foreach (var emp in empleadoL)
         emp.Sueldo();
     }
 }
+Console.WriteLine("Datos empleado 1");
+empleado1.MostrarDatos();
+Console.WriteLine("Recibo de Sueldo");
+empleado1.Sueldo();
 
-Console.WriteLine("FIN.");
+Console.WriteLine("FIN.11");

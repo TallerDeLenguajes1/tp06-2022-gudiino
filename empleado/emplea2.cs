@@ -23,7 +23,7 @@ public class Emplea2
     public void Edad()
     {
         DateTime actual = DateTime.Now;
-        var edad = actual - FecIngreso;
+        var edad = actual - FecNac;
         int anios = (int)(edad.TotalDays / 365.25);
         Console.WriteLine($"Edad: {anios} años");
     }
@@ -47,29 +47,37 @@ public class Emplea2
     }
     public void Sueldo()
     {//sueldo = sueldo basico + adicional
-        double PlusA, PlusC, PlusCo, total=SueldoBasico;
+        double PlusA, PlusC, PlusCo, total=0;
         int anios = Antiguedad();
-        Console.WriteLine("Sueldo Basico:............. "+ SueldoBasico);
+        Console.WriteLine("Sueldo Basico:............. "+ SueldoBasico + " $");
         if(anios>20){
             PlusA=0.25*SueldoBasico;
             total+=PlusA;
-            Console.WriteLine("Ajuste Antiguedad:......... "+PlusA);
+            Console.WriteLine("Ajuste Antiguedad:......... "+PlusA+" $");
         }else{
-            PlusA=0.1*anios*SueldoBasico;
+            PlusA=0.01*anios*SueldoBasico;
             total+=PlusA;
-            Console.WriteLine("Ajuste Antiguedad:......... "+PlusA);
+            Console.WriteLine("Ajuste Antiguedad:......... "+PlusA+" $");
         }
         if(cargo==(int)Cargos.Especialista || cargo==(int)Cargos.Ingeniero){
             PlusC=0.5*PlusA;
             total+=PlusC;
-            Console.WriteLine("Ajuste por Cargo:.......... "+PlusC);
+            Console.WriteLine("Ajuste por Cargo:.......... "+PlusC+" $");
         }
         if(EstadoCivil=="C"){
             PlusCo=15000;
             total+=PlusCo;
-            Console.WriteLine("Ajuste por Conyuge:........ "+PlusCo);
+            Console.WriteLine("Ajuste por Conyuge:........ "+PlusCo+" $");
         }
-        Console.WriteLine("Total Sueldo:.............. "+Math.Round(total,2));
+        Console.WriteLine("Total Sueldo:.............. "+Math.Round((total+SueldoBasico),2)+" $");
+    }
+    public void MostrarDatos()
+    {
+        Console.WriteLine($"Apellido: {Apellido}");
+        Console.WriteLine($"Nombre: {Nombre}");
+        Edad();
+        Console.WriteLine($"Antiguedad: {Antiguedad().ToString()} años");
+        Console.WriteLine($"Tiempo para la jubilacion: {TiempoJubilacion()} años");
     }
 
 
