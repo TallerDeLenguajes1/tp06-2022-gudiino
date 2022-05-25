@@ -82,3 +82,8 @@ public class Emplea2
 
 
 }
+public class Manager : Emplea2
+{
+    // Los campos, las propiedades, los métodos y los eventos de los empleados se heredan
+    // Los nuevos campos, propiedades, métodos y eventos del administrador van aquí...
+}
