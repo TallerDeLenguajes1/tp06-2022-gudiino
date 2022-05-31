@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
+/*premera inicializacion
 Emplea2 empleado1 = new Emplea2();
 Emplea2 empleado2 = new Emplea2();
 Emplea2 empleado3 = new Emplea2();
@@ -31,7 +32,13 @@ foreach (var emp in empleadoL)
     emp.cargo=cargo[i];
     i++;    
 }
-// for (int i = 0; i < 1; i++)
+*/
+//*********creando empleado con constructores
+Emplea2 empleado1 = new Emplea2("Jorge","Gudiño",new DateTime(1987,5,13),"S",'M',new DateTime(2012,1,16),45000,0);
+Emplea2 empleado2 = new Emplea2("Juan","Juarez",new DateTime(1958,05,28),"C",'M',new DateTime(1987,05,28),50000,2);
+Emplea2 empleado3 = new Emplea2("Luciana","Santos",new DateTime(2001,03,15),"C", 'F',new DateTime(2022,03,15),60000,4);
+var empleadoL = new List<Emplea2> {empleado1, empleado2, empleado3};
+// for (int i = 0; i < 1; i++)//muestra de datos de todos o empleado en una coleccion//no aplica
 // {
 //     empleado1.Nombre=nom[i];
 //     empleado1.Apellido=ape[i];
@@ -53,9 +60,11 @@ foreach (var emp in empleadoL)
         emp.Sueldo();
     }
 }
+Console.WriteLine();
 Console.WriteLine("Datos empleado 1");
 empleado1.MostrarDatos();
+Console.WriteLine();
 Console.WriteLine("Recibo de Sueldo");
 empleado1.Sueldo();
-
-Console.WriteLine("FIN.11");
+Console.WriteLine();
+Console.WriteLine("FIN.12");

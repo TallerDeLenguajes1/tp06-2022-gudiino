@@ -11,6 +11,16 @@ public class Emplea2
     
     public enum Cargos{Auxiliar,Administrativo,Ingeniero,Especialista,Investigador};
     public int cargo;
+    public Emplea2(string nom, string ape, DateTime fec, string civ, char gne, DateTime fecing, double salario, int carg){
+        Nombre=nom;
+        Apellido=ape;
+        FecNac=fec;
+        EstadoCivil=civ;
+        Genero=gne;
+        FecIngreso=fecing;
+        SueldoBasico=salario;
+        cargo=carg;
+    }
     public int Antiguedad()
     {
         DateTime actual = DateTime.Now;
@@ -82,8 +92,10 @@ public class Emplea2
 
 
 }
-public class Manager : Emplea2
-{
-    // Los campos, las propiedades, los métodos y los eventos de los empleados se heredan
-    // Los nuevos campos, propiedades, métodos y eventos del administrador van aquí...
-}
+// public class Directivos : Emplea2
+// {
+//     // Los campos, las propiedades, los métodos y los eventos de los empleados se heredan
+//     // Los nuevos campos, propiedades, métodos y eventos del administrador van aquí...
+//     public enum Puesto{Gerente, Accionista};
+//     public int cargo2;
+// }
